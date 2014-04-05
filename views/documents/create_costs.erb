@@ -1,0 +1,29 @@
+<div class='row'>
+    <h2>Create Document > Costs</h2>
+</div>
+
+<!-- List of projects/docs -->
+<div class='row'>
+    <div class="col-md-8">
+        <form role="form">
+            <div class="form-group">
+                <label for="projectGoals">How much will your project cost?</label>
+                <textarea type="text" id="projectGoals" class="form-control" rows="3"></textarea>
+            </div>
+            <div class="form-group">
+                <label for="goals">How much back up money do you need?</label>
+                <textarea type="text" id="goals" class="form-control" rows="4"></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="goals">What is the total cost?</label>
+                <textarea type="text" id="goals" class="form-control" rows="4"></textarea>
+            </div>
+
+            <div class="form-group col-md-offset-6 col-md-6" >
+                <a class="btn btn-large btn-info" href="/projects/<%=project_id%>/doctype/<%=doctypeid%>/risks">Previous</a>
+                <a class="btn btn-large btn-info" href="/project/<%=project_id%>">Finish and Create Document</a>
+            </div>
+        </form>
+    </div>
+</div>
