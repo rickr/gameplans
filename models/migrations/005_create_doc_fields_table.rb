@@ -1,10 +1,14 @@
 Sequel.migration do
   up do
-    create_table(:users) do
+    create_table(:doc_fields) do
       primary_key :id
 
-      String :name, :null=>false, :unique => true
-      Int :project_id, :null=>false
+      Int :document_id, :null=>false
+
+      String :field, :null => false
+      #String :value, :null => false
+
+      #String :name, :null=>false, :unique => true
 
       String :created_at, :null => false, :default => Sequel.lit("DATETIME(CURRENT_TIMESTAMP)")
       String :last_modified, :null => false, :default =>  Sequel.lit("DATETIME(CURRENT_TIMESTAMP)")
@@ -12,6 +16,6 @@ Sequel.migration do
   end
 
   down do
-    drop_table(:users)
+    drop_table(:doc_fields)
   end
 end
