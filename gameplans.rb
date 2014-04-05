@@ -36,7 +36,14 @@ class GamePlans < Sinatra::Base
 
   # MVP 
   get '/demo/?' do
+    #if logged_in?
     erb :"demo/index"
+  end
+
+  get '/project/:project_id/?' do |project_id|
+    #"You are at project #{project_name}"
+
+    erb :"demo/project", :locals => {:project_id => project_id }
   end
 
 
