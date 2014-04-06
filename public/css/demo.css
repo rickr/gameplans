@@ -20,6 +20,7 @@ h2 {
 
 .add_icon {
     cursor: pointer;
+    width: 25px;
 }
 
 .complete {
@@ -30,6 +31,10 @@ h2 {
     background-color: red;
 }
 
-.started {
-    background-color: yellow;
+.partial {
+    background-color: #e5e500;
+}
+
+.table td {
+    width: 150px;
 }
