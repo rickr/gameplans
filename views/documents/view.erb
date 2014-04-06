@@ -1,0 +1,36 @@
+<% rows.each do |row| %>
+  <div class="panel panel-default">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= row.header %></h3>
+      </div>
+      <div class="panel-body">
+        <table>
+          <% row.fields.each do |field| %>
+          <tr>
+            <td> <%= field.value %>
+          </tr>
+          <% end %>
+        </table>
+      </div>
+  </div>
+<% end %>
+
+
+<!-- <div class="panel panel-default">
+    <div class="panel-heading"><h3 class="panel-title">Costs</h3></div>
+    <table class="table">
+        <tr>
+            <td>Project Costs</td>
+            <td>$65.00</td>
+        </tr>
+        <tr>
+            <td>Contingency</td>
+            <td>$25.00</td>
+        </tr>
+        <tr>
+            <td>Total Cost</td>
+            <td>$90.00</td>
+        </tr>
+    </table>
+-->
+</div>
