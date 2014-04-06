@@ -1,7 +1,7 @@
 #encoding: utf-8
 require 'sequel'
 
-db_dir = "../shared/db"
+db_dir = "./shared/db"
 db_fname = 'gameplans.sqlite3'
 db_path = File.join(db_dir, db_fname)
 

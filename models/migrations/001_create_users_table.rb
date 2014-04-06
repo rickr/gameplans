@@ -3,8 +3,8 @@ Sequel.migration do
     create_table(:users) do
       primary_key :id
 
-      String :name, :null=>false, :unique => true
-      Int :project_id, :null=>false
+      String :name, :null=>false
+      Int :project_id
 
       String :created_at, :null => false, :default => Sequel.lit("DATETIME(CURRENT_TIMESTAMP)")
       String :last_modified, :null => false, :default =>  Sequel.lit("DATETIME(CURRENT_TIMESTAMP)")

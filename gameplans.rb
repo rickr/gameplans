@@ -28,9 +28,15 @@ class GamePlans < Sinatra::Base
 
   # Routes
 
-  # MVP 
+  # MVP
   get '/' do
     erb :index, :locals => { :user => current_user }
+  end
+
+  post '/projects/add' do
+    project_name = params[:projectName]
+    Project.create(:user_id => current_user.id, :name => project_name)
+    redirect '/'
   end
 
   get '/project/:project_id/?' do |project_id|
@@ -78,9 +84,9 @@ class GamePlans < Sinatra::Base
   # Helpers
   def current_user
     # Stub for a real current user
-    # Should return a userid (int)
+    # Should return a user
 
-    return 1
+    return User.first
   end
 
   run! if app_file == $0
