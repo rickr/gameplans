@@ -69,6 +69,11 @@
             updateProgressbar();
         });
 
+
+        $('#projectRisks').blur(function(){
+            updateProgressbar();
+        });
+
         $('#resolveRisks').blur(function(){
             updateProgressbar();
         });
