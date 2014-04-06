@@ -40,6 +40,8 @@ GEM
       rack-test
       sinatra (~> 1.4.0)
       tilt (~> 1.3)
+    sinatra-flash (0.3.0)
+      sinatra (>= 1.0.0)
     sinatra-reloader (1.0)
       sinatra-contrib
     sinatra-sequel (0.9.0)
@@ -61,6 +63,7 @@ DEPENDENCIES
   rvm-capistrano
   sequel
   sinatra
+  sinatra-flash
   sinatra-reloader
   sinatra-sequel
   sqlite3

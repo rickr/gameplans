@@ -6,6 +6,7 @@ gem 'haml'
 
 gem 'sequel'
 gem 'sinatra-sequel'
+gem 'sinatra-flash'
 gem 'capistrano', '~> 2.15.4'
 gem 'rvm-capistrano'
 gem 'sqlite3'

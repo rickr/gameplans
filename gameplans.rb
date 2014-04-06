@@ -7,16 +7,33 @@ require 'sinatra'
 require 'json'
 require 'haml'
 
+require 'sinatra/flash'
+
 require 'sinatra/reloader' if development?
 require 'pp' if development?
 
 
 require_relative 'models/init.rb'
 
+module Sinatra
+  module Flash
+    module Style
+      def styled_flash(key=:flash)
+        return "" if flash(key).empty?
+        id = (key == :flash ? "flash" : "flash_#{key}")
+        close = '<a class="close" data-dismiss="alert" href="#">×</a>'
+        messages = flash(key).collect {|message| " <div class='alert alert-#{message[0]}'>#{close}\n #{message[1]}</div>\n"}
+        "<div id='#{id}'>\n" + messages.join + "</div>"
+      end
+    end
+  end
+end
+
 
 class GamePlans < Sinatra::Base
   set :bind, '0.0.0.0'
   enable :sessions
+  register Sinatra::Flash
 
   configure :development do
     set :logging, true
@@ -35,10 +52,16 @@ class GamePlans < Sinatra::Base
 
   post '/projects/add' do
     project_name = params[:projectName]
-    Project.create(:user_id => current_user.id, :name => project_name)
-    redirect '/'
+    project = Project.create(:user_id => current_user.id, :name => project_name)
+    flash[:info] = "Project created!"
+    redirect "/project/#{project.id}"
   end
 
+
+
+
+
+  # Static demo
   get '/project/:project_id/?' do |project_id|
     #"You are at project #{project_name}"
 
