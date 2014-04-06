@@ -10,11 +10,11 @@ Sequel.migration do
       String :last_modified, :null => false, :default =>  Sequel.lit("DATETIME(CURRENT_TIMESTAMP)")
     end
 
-    self[:doc_types].insert(:name => 'DocType1')
-    self[:doc_types].insert(:name => 'DocType2')
-    self[:doc_types].insert(:name => 'DocType3')
-    self[:doc_types].insert(:name => 'DocType4')
-    self[:doc_types].insert(:name => 'DocType5')
+    self[:doc_types].insert(:name => 'Project Charter')
+    self[:doc_types].insert(:name => 'Project Management Plan')
+    self[:doc_types].insert(:name => 'Risk Log')
+    self[:doc_types].insert(:name => 'Project Schedule')
+    self[:doc_types].insert(:name => 'Project Cost Management')
   end
 
   down do

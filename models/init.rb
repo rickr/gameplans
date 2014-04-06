@@ -15,5 +15,6 @@ require_relative 'users'
 require_relative 'projects'
 require_relative 'documents'
 require_relative 'doctypes'
-require_relative 'docfields'
+require_relative 'rows'
+require_relative 'fields'
 

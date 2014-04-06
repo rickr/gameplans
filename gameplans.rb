@@ -71,11 +71,38 @@ class GamePlans < Sinatra::Base
     project_id = params[:project_id]
     doc_type = params[:doc_type]
 
-    document = Document.create(:project_id => project_id, :doc_type => doc_type)
-    flash[:info] = "New #{document.name} doc created!"
-    redirect "/project/#{project.id}"
+    document = Document.create(:project_id => project_id, :doc_type_id => doc_type)
+    lash[:info] = "New #{document.doc_type.name} doc created!"
   end
 
+  get '/project/:project_id/document/:document_id/view/?' do |project_id, document_id|
+    document = Document.find(:id => document_id)
+    pp document.rows
+  end
+
+  get '/project/:project_id/document/:document_id/edit/?' do |project_id, document_id|
+    document = Document.find(:id => document_id)
+    step = (document.rows.count + 1).to_s
+    redirect "#{request.url}/#{step}"
+  end
+
+  get '/project/:project_id/document/:document_id/edit/:step' do |project_id, document_id, step|
+    #puts Document.find(:id => document_id)
+    document = Document.find(:id => document_id)
+    doc_type = document.doc_type
+    rows = doc_type.rows
+    row = doc_type.rows[step.to_i - 1]
+    fields = row.fields
+    steps = rows.count
+
+    erb :'documents/edit', :locals => { :doc_type => doc_type, 
+                                        :row => row, 
+                                        :fields => fields,
+                                        :document_id => document_id,
+                                        :this_step => step.to_i,
+                                        :steps => steps.to_i
+                                      }
+  end
 
 
 
@@ -86,8 +113,6 @@ class GamePlans < Sinatra::Base
   #end
 
   get '/project/:project_id/:document_id?' do |project_id, document_id|
-    #"You are at document #{document_name} for the project #{project_id}"
-
     erb :"demo/project", :locals => {:project_id => project_id, :document_id => document_id }
   end
 

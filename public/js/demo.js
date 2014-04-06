@@ -32,10 +32,18 @@
             $(this).addClass( "active" );
         });
 
-        $('#create_document_start').click(function(){
-            $('#create_document_modal').modal('hide');
-            window.location = "/projects/1/doctype/1"
-        })
+        $('#create_document_start').on('click', function(event){
+          doc_type = $('div#documentType a.active').attr('id');
+          $.post(document.URL.replace('#', '') + '/document/add', {doc_type : doc_type})
+          $('#create_document_modal').modal('hide')
+          window.location = document.URL.replace('#', '');
+        });
+
+        // Static Demo
+        //$('#create_document_start').click(function(){
+        //    $('#create_document_modal').modal('hide');
+        //    window.location = "/projects/1/doctype/1"
+        //})
 
         function updateProgressbar() {
             var val = $("#progress-bar").attr('aria-valuenow');

@@ -10,23 +10,27 @@
             <div class="thumbnail">
                 <img src="/images/stock_new_text.png" alt="...">
                 <div class="caption">
-                  <%= "<a href='/projects/1/document_detail'>#{document.doc_type.name}" %>
-                    <% if document.completed <= 25 %>
+                  <%= document.doc_type.name %>
+                    <% if document.completed.to_i <= 25 %>
                       <%= "<span class='badge not_started'>#{document.completed}%</span></a>" %>
-                    <% elsif document.completed <= 60 %>
+                    <% elsif document.completed.to_i <= 60 %>
                       <%= "<span class='badge started'>#{document.completed}%</span></a>" %>
-                    <% elsif document.completed <= 95 %>
+                    <% elsif document.completed.to_i <= 95 %>
                       <%= "<span class='badge complete'>#{document.completed}%</span></a>" %>
                     <%end%>
+                  <br>
+                  <%= "<a href='/project/1/document/#{document.id}/view'>View</a>" %>
+                  &nbsp;
+                  <%= "<a href='/project/1/document/#{document.id}/edit'>Edit</a>" %>
 
                     <p></p>
                 </div>
             </div>
         </div>
-  <%= document.id %>
 <% end %>
 
-        <div class="col-sm-6 col-md-2">
+        <!-- STATIC DEMO CODE 
+          <div class="col-sm-6 col-md-2">
             <div class="thumbnail">
                 <img src="/images/stock_new_text.png" alt="...">
                 <div class="caption">
@@ -73,7 +77,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> -->
 </div>
 
 <!-- List of docs -->
@@ -92,9 +96,9 @@
                 <div id="documentType" class="list-group">
                     <% doc_types.each_with_index do |doc_type, index| %>
                       <% if index == 0 %>
-                        <%= "<a href='#' class='list-group-item active'>#{doc_type.name}</a>" %>
+                        <%= "<a href='#' id='#{doc_type.id}' class='list-group-item active'>#{doc_type.name}</a>" %>
                       <% else %>
-                        <%= "<a href='#' class='list-group-item'>#{doc_type.name}</a>" %>
+                        <%= "<a href='#' id='#{doc_type.id}' class='list-group-item'>#{doc_type.name}</a>" %>
                       <% end %>
                     <%end%>
                 </div>
