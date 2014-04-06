@@ -31,7 +31,7 @@ class GamePlans < Sinatra::Base
   # Landing Page
   get '/' do
     #"Dooby dooby doo!"
-    erb :landing_page
+    erb :"demo/index"
   end
 
   # MVP 

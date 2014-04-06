@@ -64,6 +64,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
+      <file leaf-file-name="gameplans.rb" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/gameplans.rb">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="33" column="20" selection-start="506" selection-end="511" vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1410">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="create_risks.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/documents/create_risks.erb">
           <provider selected="true" editor-type-id="text-editor">
@@ -71,15 +80,6 @@
               <folding>
                 <element signature="n#style#0;n#div#0;n#div#0;n#!!top" expanded="true" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="document_detail.erb" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/views/documents/document_detail.erb">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="109" column="32" selection-start="2927" selection-end="2927" vertical-scroll-proportion="-68.125" vertical-offset="0" max-vertical-offset="2220">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -93,10 +93,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.erb" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.erb" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/views/demo/index.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="94" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1230">
+            <state line="9" column="26" selection-start="251" selection-end="251" vertical-scroll-proportion="0.24236985" vertical-offset="0" max-vertical-offset="1215">
               <folding />
             </state>
           </provider>
@@ -112,7 +112,7 @@
       <file leaf-file-name="index.erb" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/views/documents/index.erb">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="42" selection-start="1769" selection-end="1769" vertical-scroll-proportion="0.0" vertical-offset="568" max-vertical-offset="1380">
+            <state line="49" column="81" selection-start="2002" selection-end="2006" vertical-scroll-proportion="-3.54" vertical-offset="558" max-vertical-offset="1380">
               <folding />
             </state>
           </provider>
@@ -127,10 +127,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="demo.css" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="demo.css" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/css/demo.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="33" column="13" selection-start="375" selection-end="375" vertical-scroll-proportion="0.8333333" vertical-offset="0" max-vertical-offset="600">
+            <state line="34" column="29" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0" vertical-offset="81" max-vertical-offset="675">
               <folding />
             </state>
           </provider>
@@ -172,13 +172,13 @@
         <option value="$PROJECT_DIR$/views/documents/create_costs.erb" />
         <option value="$PROJECT_DIR$/views/documents/create.erb" />
         <option value="$PROJECT_DIR$/views/layout.erb" />
-        <option value="$PROJECT_DIR$/views/demo/index.erb" />
-        <option value="$PROJECT_DIR$/gameplans.rb" />
-        <option value="$PROJECT_DIR$/views/documents/index.erb" />
         <option value="$PROJECT_DIR$/public/js/demo.js" />
         <option value="$PROJECT_DIR$/views/documents/create_risks.erb" />
-        <option value="$PROJECT_DIR$/views/documents/document_detail.erb" />
+        <option value="$PROJECT_DIR$/gameplans.rb" />
+        <option value="$PROJECT_DIR$/views/documents/index.erb" />
         <option value="$PROJECT_DIR$/public/css/demo.css" />
+        <option value="$PROJECT_DIR$/views/documents/document_detail.erb" />
+        <option value="$PROJECT_DIR$/views/demo/index.erb" />
       </list>
     </option>
   </component>
@@ -761,13 +761,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/demo/index.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="94" selection-start="170" selection-end="170" vertical-scroll-proportion="0.0" vertical-offset="45" max-vertical-offset="1230">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/views/documents/create.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="7" column="7" selection-start="221" selection-end="221" vertical-scroll-proportion="0.0" vertical-offset="105" max-vertical-offset="450">
@@ -778,20 +771,6 @@
     <entry file="file://$PROJECT_DIR$/views/layout.erb">
       <provider selected="true" editor-type-id="text-editor">
         <state line="13" column="31" selection-start="631" selection-end="631" vertical-scroll-proportion="0.0" vertical-offset="465" max-vertical-offset="1035">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gameplans.rb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="45" selection-start="1991" selection-end="2029" vertical-scroll-proportion="0.0" vertical-offset="726" max-vertical-offset="1410">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/views/documents/index.erb">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="42" selection-start="1769" selection-end="1769" vertical-scroll-proportion="0.0" vertical-offset="568" max-vertical-offset="1380">
           <folding />
         </state>
       </provider>
@@ -812,16 +791,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/views/documents/document_detail.erb">
+    <entry file="file://$PROJECT_DIR$/views/documents/index.erb">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="109" column="32" selection-start="2927" selection-end="2927" vertical-scroll-proportion="-68.125" vertical-offset="0" max-vertical-offset="2220">
+        <state line="49" column="81" selection-start="2002" selection-end="2006" vertical-scroll-proportion="-3.54" vertical-offset="558" max-vertical-offset="1380">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/css/demo.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="33" column="13" selection-start="375" selection-end="375" vertical-scroll-proportion="0.8333333" vertical-offset="0" max-vertical-offset="600">
+        <state line="34" column="29" selection-start="407" selection-end="407" vertical-scroll-proportion="0.0" vertical-offset="81" max-vertical-offset="675">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/documents/document_detail.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="127" column="37" selection-start="3505" selection-end="3505" vertical-scroll-proportion="1.7105263" vertical-offset="930" max-vertical-offset="2220">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gameplans.rb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="33" column="20" selection-start="506" selection-end="511" vertical-scroll-proportion="0.0" vertical-offset="390" max-vertical-offset="1410">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/views/demo/index.erb">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="26" selection-start="251" selection-end="251" vertical-scroll-proportion="0.24236985" vertical-offset="0" max-vertical-offset="1215">
           <folding />
         </state>
       </provider>
