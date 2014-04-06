@@ -1,2 +1,2 @@
-require './APP_NAME.rb'
-run APP_NAME
+require './gameplans.rb'
+run GamePlans

@@ -1,5 +1,13 @@
-MIGRATION_DIR='models/migrations'
-DB_PATH='../shared/db/app_name.sqlite3'
+DB_PATH="sqlite://shared/db/gameplans.sqlite3"
+MIGRATIONS="models/migrations/"
+
+if [[ $1 == "-h" ]]; then
+  echo "Migrate up:"
+  echo "  $0"
+  echo "Migrate down:"
+  echo "  $0 down <level>"
+  exit 0
+fi
 
 if [[ $1 == 'down' ]]; then
   level=0
@@ -8,7 +16,9 @@ if [[ $1 == 'down' ]]; then
   fi
 
   echo "Migrating down to $level"
-  sequel -m ${MIGRATION_DIR} -M $level sqlite://${DB_PATH}
+  sequel -E -m ${MIGRATIONS} -M $level $DB_PATH
 else
-  sequel -m ${MIGRATION_DIR}  sqlite://${DB_PATH}
+  echo "Migrating up"
+  sequel -E -m ${MIGRATIONS}  $DB_PATH
 fi
+
