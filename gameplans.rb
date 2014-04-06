@@ -67,23 +67,29 @@ class GamePlans < Sinatra::Base
     erb :"documents/index", :locals => {:project_id => project.name, :documents => documents, :doc_types => doc_types}
   end
 
+  
   post '/project/:project_id/document/add' do |project_id|
     project_id = params[:project_id]
     doc_type = params[:doc_type]
 
     document = Document.create(:project_id => project_id, :doc_type_id => doc_type)
-    lash[:info] = "New #{document.doc_type.name} doc created!"
+    flash[:info] = "New #{document.doc_type.name} doc created!"
   end
 
   get '/project/:project_id/document/:document_id/view/?' do |project_id, document_id|
     document = Document.find(:id => document_id)
-    pp document.rows
+    rows = document.rows
+
+    erb :'documents/view', :locals => { :document_id => document_id,
+                                        :rows => rows
+                                      }
+
   end
 
   get '/project/:project_id/document/:document_id/edit/?' do |project_id, document_id|
     document = Document.find(:id => document_id)
     step = (document.rows.count + 1).to_s
-    redirect "#{request.url}/#{step}"
+    redirect "#{request.url.chomp('/')}/#{step}"
   end
 
   get '/project/:project_id/document/:document_id/edit/:step' do |project_id, document_id, step|
@@ -91,17 +97,36 @@ class GamePlans < Sinatra::Base
     document = Document.find(:id => document_id)
     doc_type = document.doc_type
     rows = doc_type.rows
+
     row = doc_type.rows[step.to_i - 1]
     fields = row.fields
     steps = rows.count
 
-    erb :'documents/edit', :locals => { :doc_type => doc_type, 
-                                        :row => row, 
+    erb :'documents/edit', :locals => { :doc_type => doc_type,
+                                        :row => row,
                                         :fields => fields,
                                         :document_id => document_id,
                                         :this_step => step.to_i,
                                         :steps => steps.to_i
                                       }
+  end
+
+  post '/project/:project_id/document/:document_id/edit/:step' do |project_id, document_id, step|
+    row = Row.find(:id => step)
+    document = Document.find(:id => document_id)
+    values = params[:values]
+
+    row = Row.create(:document_id => document_id, :header => row.header)
+    pp values
+    values.each do |value|
+      Field.create(:row_id => row.id, :value => value)
+    end
+
+    #values.each do |value|
+      #Field.create(:document_id => document_id, :row_id => row.id, :value => value)
+    #end
+
+    redirect "#{request.url.chomp('/')}/../#{step.to_i + 1}"
   end
 
 
@@ -118,7 +143,6 @@ class GamePlans < Sinatra::Base
 
 
   get '/projects/:project_id/doctype/:doctypeid?' do |project_id, doctypeid|
-
     erb :"documents/create", :locals => {:project_id => project_id, :doctypeid => doctypeid }
   end
 

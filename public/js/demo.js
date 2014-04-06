@@ -39,6 +39,11 @@
           window.location = document.URL.replace('#', '');
         });
 
+        //$('#edit_next').on('click', function(event){
+        //  console.log($(this).parent.values);
+        //  $.post(document.URL, {});
+        //});
+
         // Static Demo
         //$('#create_document_start').click(function(){
         //    $('#create_document_modal').modal('hide');

@@ -12,12 +12,12 @@
 <!-- List of projects/docs -->
 <div class='row'>
     <div class='col-md-6'>
-        <form role="form" action='POST'>
+        <form role="form" method='POST'>
           <div class='row'>
             <% fields.each do |field| %>
               <div class="form-group col-md-12">
-                <label for=""><%= field.question %></label>
-                <textarea type="text" id="<%= field.id %>" class="form-control" rows="2"></textarea>
+              <label for="<%= field.id %>"><%= field.question %></label>
+                <textarea name='values[]' type="text" id="<%= field.id %>" class="form-control" rows="2"></textarea>
               </div>
             <% end %>
           </div>
@@ -29,9 +29,9 @@
               <% end %>
 
               <% if this_step < steps %>
-                <a class="btn btn-large btn-info pull-right" href="<%= (this_step + 1) %>">Next</a>
+                <input type='submit' id='next' class="btn btn-large btn-info pull-right" value="Next">
               <% else %>
-                <a class="btn btn-large btn-info pull-right" href="../../view">Finish</a>
+                <a class="btn btn-large btn-info pull-right" href="../view">Finish</a>
               <% end %>
             </div>
           </div>
