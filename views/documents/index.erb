@@ -5,6 +5,27 @@
 
 <div class="section">
     <div class="row">
+<% documents.each do |document| %>
+        <div class="col-sm-6 col-md-2">
+            <div class="thumbnail">
+                <img src="/images/stock_new_text.png" alt="...">
+                <div class="caption">
+                  <%= "<a href='/projects/1/document_detail'>#{document.doc_type.name}" %>
+                    <% if document.completed <= 25 %>
+                      <%= "<span class='badge not_started'>#{document.completed}%</span></a>" %>
+                    <% elsif document.completed <= 60 %>
+                      <%= "<span class='badge started'>#{document.completed}%</span></a>" %>
+                    <% elsif document.completed <= 95 %>
+                      <%= "<span class='badge complete'>#{document.completed}%</span></a>" %>
+                    <%end%>
+
+                    <p></p>
+                </div>
+            </div>
+        </div>
+  <%= document.id %>
+<% end %>
+
         <div class="col-sm-6 col-md-2">
             <div class="thumbnail">
                 <img src="/images/stock_new_text.png" alt="...">
@@ -69,11 +90,13 @@
                     <h5>Select a Document Type</h5>
                 </div>
                 <div id="documentType" class="list-group">
-                    <a href="#" class="list-group-item active">Cras justo odio</a>
-                    <a href="#" class="list-group-item">Dapibus ac facilisis in</a>
-                    <a href="#" class="list-group-item">Morbi leo risus</a>
-                    <a href="#" class="list-group-item">Porta ac consectetur ac</a>
-                    <a href="#" class="list-group-item">Vestibulum at eros</a>
+                    <% doc_types.each_with_index do |doc_type, index| %>
+                      <% if index == 0 %>
+                        <%= "<a href='#' class='list-group-item active'>#{doc_type.name}</a>" %>
+                      <% else %>
+                        <%= "<a href='#' class='list-group-item'>#{doc_type.name}</a>" %>
+                      <% end %>
+                    <%end%>
                 </div>
             </div>
             <div class="modal-footer">

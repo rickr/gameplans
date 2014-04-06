@@ -58,15 +58,32 @@ class GamePlans < Sinatra::Base
   end
 
 
+  # List documents, create new doc modal
+  get '/project/:project_id/?' do |project_id|
+    project = Project.find({:id => project_id})
+    documents = project.documents
+    doc_types = DocType.all
+
+    erb :"documents/index", :locals => {:project_id => project.name, :documents => documents, :doc_types => doc_types}
+  end
+
+  post '/project/:project_id/document/add' do |project_id|
+    project_id = params[:project_id]
+    doc_type = params[:doc_type]
+
+    document = Document.create(:project_id => project_id, :doc_type => doc_type)
+    flash[:info] = "New #{document.name} doc created!"
+    redirect "/project/#{project.id}"
+  end
+
 
 
 
   # Static demo
-  get '/project/:project_id/?' do |project_id|
+  #get '/project/:project_id/?' do |project_id|
     #"You are at project #{project_name}"
-
-    erb :"documents/index", :locals => {:project_id => project_id }
-  end
+  #  erb :"documents/index", :locals => {:project_id => project_id }
+  #end
 
   get '/project/:project_id/:document_id?' do |project_id, document_id|
     #"You are at document #{document_name} for the project #{project_id}"
