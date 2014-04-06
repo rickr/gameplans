@@ -27,17 +27,10 @@ class GamePlans < Sinatra::Base
   end
 
   # Routes
-  #
-  # Landing Page
-  get '/' do
-    #"Dooby dooby doo!"
-    erb :landing_page
-  end
 
   # MVP 
-  get '/demo/?' do
-    #if logged_in?
-    erb :"demo/index"
+  get '/' do
+    erb :index, :locals => { :user => current_user }
   end
 
   get '/project/:project_id/?' do |project_id|
@@ -83,6 +76,12 @@ class GamePlans < Sinatra::Base
 
 
   # Helpers
+  def current_user
+    # Stub for a real current user
+    # Should return a userid (int)
+
+    return 1
+  end
 
   run! if app_file == $0
 end
