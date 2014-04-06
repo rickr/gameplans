@@ -1,0 +1,31 @@
+.caption {
+    text-align: center !important;
+}
+
+h1 {
+    font-size: 24px !important;
+}
+
+h2 {
+    font-size: 24px !important;
+}
+
+.demopage_header {
+    border-bottom: 1px solid #808080;
+}
+
+.section {
+    margin-top: 25px;
+}
+
+.add_icon {
+    cursor: pointer;
+}
+
+.complete {
+    background-color: green;
+}
+
+.not_started {
+    background-color: red;
+}

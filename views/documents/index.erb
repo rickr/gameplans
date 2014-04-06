@@ -1,28 +1,61 @@
 <!-- Document header -->
 <div class='row'>
-    <h1>Documents for Project <%=project_id%></h1>
+    <h3>Documents for Project <%=project_id%> <img src="/images/button_plus_green.png" id="new_document" class="add_icon"/></h3>
 </div>
 
-
-<!-- List of docs -->
-<div class='row'>
-    <div class='col-md-6'>
-        <div class='col-md-offset-11 col-md-1'>
-            <a href='#' id="new_document">Add</a>
+<div class="section">
+    <div class="row">
+        <div class="col-sm-6 col-md-2">
+            <div class="thumbnail">
+                <img src="/images/stock_new_text.png" alt="...">
+                <div class="caption">
+                    <a href='/projects/1/document_detail'>Doc 1 <span class="badge">80%</span></a>
+                    <p></p>
+                </div>
+            </div>
         </div>
-        <table class ='table table-condensed table-striped'>
-            <!-- projects.each do |project| -->
-            <tr>
-                <td><span class="glyphicon glyphicon-floppy-disk"></span><a href='/project/1/1'>Document 1</a></td>
-            <tr>
-                <td><span class="glyphicon glyphicon-floppy-disk"></span><a href='/project/1/2'>Document 2</a></td>
-            <tr>
-                <td><span class="glyphicon glyphicon-floppy-disk"></span><a href='/project/1/3'>Document 3</a></td>
-        </table>
+        <div class="col-sm-6 col-md-2">
+            <div class="thumbnail">
+                <img src="/images/stock_new_text.png" alt="...">
+                <div class="caption">
+                    <a href='/projects/1/document_detail'>Doc 2 <span class="badge complete">100%</span></a>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-2">
+            <div class="thumbnail">
+                <img src="/images/stock_new_text.png" alt="...">
+                <div class="caption">
+                    <a href='/projects/1/document_detail'>Doc 3 <span class="badge">80%</span></a>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-sm-6 col-md-2">
+            <div class="thumbnail">
+                <img src="/images/stock_new_text.png" alt="...">
+                <div class="caption">
+                    <a href='/projects/1/document_detail'>Doc 4 <span class="badge not_started">0%</span></a>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-6 col-md-2">
+            <div class="thumbnail">
+                <img src="/images/stock_new_text.png" alt="...">
+                <div class="caption">
+                    <a href='/projects/1/document_detail'>Doc 5 <span class="badge">80%</span></a>
+                    <p></p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 
-
+<!-- List of docs -->
 <div class="modal fade" id="create_document_modal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">

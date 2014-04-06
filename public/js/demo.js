@@ -36,5 +36,58 @@
             $('#create_document_modal').modal('hide');
             window.location = "/projects/1/doctype/1"
         })
+
+        function updateProgressbar() {
+            var val = $("#progress-bar").attr('aria-valuenow');
+            var newval =  (Number(val) + 5);
+            $("#progress-bar").html( newval + "%");
+            $('#progress-bar').css('width', newval + "%");
+            $("#progress-bar").attr('aria-valuenow', newval);
+        }
+
+        $('#mission').blur(function(){
+            updateProgressbar();
+        });
+
+        $('#responsibleGoals').blur(function(){
+            updateProgressbar();
+        });
+
+        $('#projectObjective').blur(function(){
+            updateProgressbar();
+        });
+
+        $('#responsible').blur(function(){
+            updateProgressbar();
+        });
+
+        $('#responsible2').blur(function(){
+            updateProgressbar();
+        });
+
+        $('#projectGoals').blur(function(){
+            updateProgressbar();
+        });
+
+
+        $('#projectRisks').blur(function(){
+            updateProgressbar();
+        });
+
+        $('#resolveRisks').blur(function(){
+            updateProgressbar();
+        });
+
+        $('#backupMoney').blur(function(){
+            updateProgressbar();
+        });
+
+        $('#totalCosts').blur(function(){
+            updateProgressbar();
+        });
+
+        $('#projectCosts').blur(function(){
+            updateProgressbar();
+        });
     });
 

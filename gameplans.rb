@@ -76,6 +76,12 @@ class GamePlans < Sinatra::Base
   get '/projects/:project_id/doctype/:doctypeid/create_costs' do |project_id, doctypeid|
     erb :"documents/create_costs", :locals => {:project_id => project_id, :doctypeid => doctypeid }
   end
+
+  get '/projects/:document_id/document_detail' do |document_id|
+    erb :"documents/document_detail", :locals => {:document_id => document_id }
+  end
+
+
   # Helpers
 
   run! if app_file == $0
